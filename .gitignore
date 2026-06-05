@@ -1,0 +1,41 @@
+# Virtual Environment
+myenv/
+venv/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Environment variables (secret keys)
+.env
+.env.local
+
+# VSCode settings
+.vscode/
+
+# Jupyter Notebook
+#.ipynb_checkpoints/
+#*.ipynb
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Docker (not needed for deployment)
+Dockerfile
+docker-compose.yml
+.dockerignore
