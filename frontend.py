@@ -30,14 +30,22 @@ if st.button("Predict Premium Category"):
     }
 
     try:
-            response = requests.post(API_URL, json=input_data)
+        with st.spinner("Predicting... please wait ⏳"):
+            response = requests.post(API_URL, json=input_data, timeout=60)
             result = response.json()
 
-            if response.status_code == 200:
+        if response.status_code == 200:
+            if 'predicted_category' in result:
                 st.success(f"✅ Predicted Insurance Premium Category: **{result['predicted_category']}**")
             else:
-                st.error(f"❌ API Error: {response.status_code}")
+                st.error("Unexpected response from API")
                 st.write(result)
+        else:
+            st.error(f"❌ API Error: {response.status_code}")
+            st.write(result)
 
     except requests.exceptions.ConnectionError:
-            st.error(" Could not connect to the FastAPI server. Make sure it's running.")
+        st.error("❌ Could not connect to the API server. Please try again in a minute.")
+
+    except requests.exceptions.Timeout:
+        st.error("⏰ Server is waking up from sleep. Please click Predict again in 1-2 minutes.")
