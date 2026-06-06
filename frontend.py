@@ -35,11 +35,18 @@ if st.button("Predict Premium Category"):
             result = response.json()
 
         if response.status_code == 200:
-            if 'predicted_category' in result:
-                st.success(f"✅ Predicted Insurance Premium Category: **{result['predicted_category']}**")
-            else:
-                st.error("Unexpected response from API")
-                st.write(result)
+            prediction = result['response']
+            predicted_category = prediction['predicted_category']
+            confidence = prediction['confidence']
+            class_probabilities = prediction['class_probabilities']
+
+            st.success(f"✅ Predicted Insurance Premium Category: **{predicted_category}**")
+            st.info(f"🔍 Confidence: **{round(confidence * 100, 2)}%**")
+
+            st.write("📊 Class Probabilities:")
+            for category, probability in class_probabilities.items():
+                st.progress(probability, text=f"{category}: {round(probability * 100, 2)}%")
+
         else:
             st.error(f"❌ API Error: {response.status_code}")
             st.write(result)
