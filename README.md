@@ -1,16 +1,16 @@
-# 🏥 Insurance Premium Category Predictor
+# Insurance Premium Category Predictor
 
 A machine learning web application that predicts insurance premium categories based on user details. Built with **FastAPI** (backend) and **Streamlit** (frontend).
 
 ---
 
-## 📋 Project Overview
+## Project Overview
 
 This application takes user information such as age, weight, height, income, smoking status, city, and occupation, and predicts which insurance premium category they fall into using a trained Random Forest model.
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 INSURANCE_PREMIUM_PRED/
@@ -40,15 +40,15 @@ INSURANCE_PREMIUM_PRED/
 | Pydantic | Data validation |
 | Scikit-learn | Machine learning model |
 | Pandas | Data processing |
-| Uvicorn | ASGI server |
+| Uvicorn | 
 
 ---
 
-## 🚀 How to Run Locally
+##  How to Run Locally
 
 ### Step 1 — Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/Insurance_premium_pred.git
+git clone https://github.com/Rehena-Sultana/Insurance_premium_prediction.git
 cd Insurance_premium_pred
 ```
 
@@ -77,7 +77,7 @@ App will be available at: `http://localhost:8501`
 
 ---
 
-## 📡 API Endpoints
+##  API Endpoints
 
 ### POST `/predict`
 
@@ -105,7 +105,7 @@ Predicts the insurance premium category for a user.
 
 ---
 
-## 📊 Input Fields
+##  Input Fields
 
 | Field | Type | Description |
 |---|---|---|
@@ -128,7 +128,7 @@ Predicts the insurance premium category for a user.
 
 ---
 
-## 🧠 ML Model Features
+## ML Model Features
 
 The model uses these computed features for prediction:
 
@@ -143,21 +143,12 @@ The model uses these computed features for prediction:
 
 ---
 
-## 🌐 Live Demo
+##  Live Demo
 
-- **Frontend:** [Streamlit App](https://yourapp.streamlit.app)
-- **Backend API:** [Render API](https://yourapp.onrender.com)
-- **API Docs:** [Swagger UI](https://yourapp.onrender.com/docs)
-
----
-
-## 👤 Author
-
-**Your Name**  
-GitHub: [@YOUR_USERNAME](https://github.com/YOUR_USERNAME)
+- **Frontend:** [Streamlit App](https://insurancepremiumprediction-ihvbuwe4vnzv4ajmf6v4dq.streamlit.app/)
+- **Backend API:** [Render API](https://insurance-premium-prediction-uugj.onrender.com)
+- **API Docs:** [Swagger UI](https://insurance-premium-prediction-uugj.onrender.com/docs#/default/predict_premium_predict_post)
 
 ---
 
-## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
